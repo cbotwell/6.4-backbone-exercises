@@ -3,3 +3,31 @@
 @import 'bourbon';
 @import 'neat';
 @import 'border-box';
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+form {
+    @include outer-container(500px);
+
+    label, input {
+        @include span-columns(12);
+        padding: 10px;
+    }
+    label {
+        padding-left: 0;
+    }
+    button {
+        font-family: inherit;
+        font-size: inherit;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        background: #29A699;
+        margin-top: 10px;
+        padding: 10px;
+    }
+    button:hover {
+        background: darken(#29A699, 10%)
+    }
+}
