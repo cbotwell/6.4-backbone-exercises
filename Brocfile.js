@@ -21,8 +21,11 @@ var assetsWithTemplates = handlebars('assets', {
 var appJs = concat(assetsWithTemplates, {
   inputFiles: [
     'js/setup.js',
-    'templates/**/*.js'
+    'templates/**/*.js',
     /* Your app files here */
+    'js/model/person.js',
+    'js/view/formview.js',
+    'js/index.js'
   ],
   outputFile: 'app.js'
 });
