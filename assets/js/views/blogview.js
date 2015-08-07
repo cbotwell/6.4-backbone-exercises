@@ -4,8 +4,9 @@ var BlogView = Backbone.View.extend ({
   template: AppTemplates.blog,
 
   initialize: function() {
-    var html = this.template((this.collection.first).toJSON());
-    this.$el.html(html);
+    var _this = this;
+    var html = _this.template(_this.collection.first().toJSON());
+    _this.$el.html(html);
 
     return this;
   }

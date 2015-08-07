@@ -1,8 +1,9 @@
 <ul>
-    {{each this as |blog|}}
+    {{#each this as |blog|}}
         <li>
-            <span class="title">{{ blog.title }}</span>
-            <span class="post">{{ blog.post }}</span>
+            <p class="title">{{ blog.title }}</p>
+            <p class="post">{{ blog.post }}</p>
+            <p class="date">{{ blog.createDate }}</p>
         </li>
     {{/each}}
 </ul>

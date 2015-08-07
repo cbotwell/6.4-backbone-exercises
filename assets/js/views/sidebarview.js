@@ -4,18 +4,14 @@ var SidebarView = Backbone.View.extend({
   template: AppTemplates.sidebar,
 
   initialize: function() {
-    this.listenTo(this.collection, 'add reset sync', this.render);
-    this.collection.fetch();
     this.render();
   },
 
   render: function() {
-    var html = this.template(this.collection);
-    var _this = this;
-
+    var html = this.template(this.collection.toJSON());
     this.$el.html(html);
 
-    this.collection.sortBy('createDate');
+    // this.collection.sortBy('createDate');
 
     console.info('render');
 

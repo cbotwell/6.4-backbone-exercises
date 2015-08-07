@@ -1,3 +1,6 @@
 var posts = new BlogPosts();
-var currentPost = new BlogView();
-var allPosts = new SidebarView();
+
+posts.fetch().then(function() {
+  var currentPost = new BlogView({collection: posts});
+  var allPosts = new SidebarView({collection: posts});
+});
