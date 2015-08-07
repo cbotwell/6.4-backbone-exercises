@@ -28,12 +28,14 @@ var FormView = Backbone.View.extend ({
     var address = this.$('.address').val();
     var phone = this.$('.phone').val();
 
-    this.model.create({firstName: firstName, lastName: lastName, address: address, phone: phone});
+    this.model.save({firstName: firstName, lastName: lastName, address: address, phone: phone});
 
     this.$('.first-name').val('');
     this.$('.last-name').val('');
     this.$('.address').val('');
     this.$('.phone').val('');
+
+    this.model = new Person();
   }
 
 });

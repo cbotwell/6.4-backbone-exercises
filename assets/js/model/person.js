@@ -5,10 +5,6 @@ var Person = Backbone.Model.extend ({
     lastName: '',
     address: '',
     phone: ''
-  }
-});
-
-var People = Backbone.Collection.extend ({
-  model: Person,
-  url: 'http://tiny-lr.herokuapp.com/collections/co-people'
+  },
+  urlRoot: 'http://tiny-lr.herokuapp.com/collections/co-people'
 });
