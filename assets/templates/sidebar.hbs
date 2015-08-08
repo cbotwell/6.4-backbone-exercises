@@ -1,7 +1,7 @@
 <ul>
     {{#each this as |blog|}}
         <li>
-            <a href="#">
+            <a href="#{{ blog._id }}">
                 <p class="title">{{ blog.title }}</p>
                 <p class="post">{{ blog.post }}</p>
                 <p class="date">{{ blog.createDate }}</p>
