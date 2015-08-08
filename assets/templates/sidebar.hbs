@@ -1,9 +1,11 @@
 <ul>
     {{#each this as |blog|}}
         <li>
-            <p class="title">{{ blog.title }}</p>
-            <p class="post">{{ blog.post }}</p>
-            <p class="date">{{ blog.createDate }}</p>
+            <a href="#">
+                <p class="title">{{ blog.title }}</p>
+                <p class="post">{{ blog.post }}</p>
+                <p class="date">{{ blog.createDate }}</p>
+            </a>
         </li>
     {{/each}}
 </ul>

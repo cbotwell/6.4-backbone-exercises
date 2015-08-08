@@ -6,6 +6,7 @@
 
 body {
     font-family: Georgia, serif;
+    margin: 0 20px;
 }
 
 .wrapper {
@@ -15,21 +16,46 @@ body {
 
 #sidebar {
     @include span-columns(4);
+    padding: 0 10px;
+    li {
+        padding: 20px;
+        border-bottom: 1px solid gray;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+    li:first-of-type {
+        margin-top: 0;
+    }
+    li:last-of-type {
+        border-bottom: none;
+    }
+    li:hover {
+        background: lighten(gray, 40%);
+
+        .title {
+            color: #0074bf;
+        }
+    }
     .title {
-        font-size: 1.2em;
+        font-size: 1em;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+        margin-bottom: 5px;
     }
     .post {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         font-size: 0.9em;
+        margin-bottom: 10px;
     }
     .date {
         font-size: 0.8em;
         color: gray;
-    }
-    .title, .post, .date {
-        margin-bottom: 5px;
     }
 }
 #target {
@@ -38,15 +64,15 @@ body {
     .title {
         font-size: 2em;
         font-weight: bold;
+        margin-bottom: 10px;
     }
     .date {
         font-size: 0.9em;
         color: gray;
+        margin-bottom: 15px;
+
     }
     .post {
         font-size: 1.2em;
-    }
-    .title, .post, .date {
-        margin-bottom: 15px;
     }
 }
