@@ -4,7 +4,7 @@ var BookmarkForm = Backbone.View.extend ({
   el: '#target',
 
   initialize: function() {
-    this.listenTo(this.collection, 'add reset sync', this.render);
+    this.listenTo(this.collection, 'add', this.render);
     this.render();
   },
 

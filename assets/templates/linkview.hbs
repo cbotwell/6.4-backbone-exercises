@@ -1,0 +1,10 @@
+<ul>
+    {{#each this as |bookmark|}}
+        <li>
+            <a href="{{ bookmark.link }}">
+                {{ bookmark.link }}
+                <span>{{ bookmark.createDate }}</span>
+            </a>
+        </li>
+    {{/each}}
+</ul>
