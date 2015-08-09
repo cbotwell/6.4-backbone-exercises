@@ -10,7 +10,7 @@ var BookmarkForm = Backbone.View.extend ({
 
   events: {
     'click .add-bookmark': 'addBookmark',
-    'submit .submit-bookmark': 'submitBookmark'
+    'submit form': 'submitBookmark'
   },
 
   render: function() {
