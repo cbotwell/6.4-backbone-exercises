@@ -12,7 +12,13 @@ var TagView = Backbone.View.extend ({
     var _this = this;
 
     this.collection.fetch().then(function() {
-      var html = _this.template(_this.collection.toJSON());
+      var html = _this.template(_.filter(_this.collection.models, function(model) {
+        if (!model.attributes.tag) {
+          return {tag: model.attributes.tag};
+        }
+      }
+
+      ));
       _this.$el.html(html);
     });
 
