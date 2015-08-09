@@ -27,6 +27,7 @@ var appJs = concat(assetsWithTemplates, {
     'js/collections/allbookmarks.js',
     'js/views/bookmarkform.js',
     'js/views/linkview.js',
+    'js/views/tagview.js',
 
     'js/index.js'
   ],

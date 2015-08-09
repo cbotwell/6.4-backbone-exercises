@@ -1,7 +1,7 @@
-var LinkView = Backbone.View.extend ({
-  template: AppTemplates.linkview,
+var TagView = Backbone.View.extend ({
+  template: AppTemplates.taglist,
 
-  el: '#links',
+  el: '#tags',
 
   initialize: function() {
     this.listenTo(this.collection, 'change', this.render);
