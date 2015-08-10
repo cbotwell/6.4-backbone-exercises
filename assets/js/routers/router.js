@@ -1,6 +1,6 @@
-var Router = Backbone.Router.extend ({
+var Router = Backbone.Router.extend({
   routes: {
-    ':tag(/)': 'filterLinksByTag'
+    ':tag(/)': 'filterLinksByTag',
   },
 
   initalize: function() {
@@ -14,5 +14,5 @@ var Router = Backbone.Router.extend ({
       var html = _this.template(_this.collection.get(tag).toJSON());
       $('#links').html(html);
     });
-  }
+  },
 });

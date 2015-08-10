@@ -36,10 +36,13 @@ body {
 #links {
     @include span-columns(9);
     margin-top: 20px;
-
+    li {
+        margin-bottom: 25px;
+    }
     .link {
         font-size: 1.2em;
         margin-bottom: 5px;
+        font-weight: bold;
     }
 
     .date {
