@@ -1,6 +1,6 @@
 var Router = Backbone.Router.extend({
   routes: {
-    ':tag(/)': 'filterLinksByTag',
+    '(:tag)': 'filterLinksByTag',
   },
 
   initialize: function() {
@@ -10,11 +10,16 @@ var Router = Backbone.Router.extend({
 
   filterLinksByTag: function(tag) {
     var _this = this;
+
     this.collection.fetch().then(function() {
-      var html = _this.template(_this.collection.filter('models', function() {
-        if (this.tag === tag) {
-          return this.toJSON();
+      var html = _this.template(_this.collection.filter(function(model) {
+        if (tag) {
+          return model.get('tag') === tag;
         }
+
+        return true;
+      }).map(function(model) {
+        return model.toJSON();
       }));
 
       $('#links').html(html);

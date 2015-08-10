@@ -1,4 +1,4 @@
-var TagView = Backbone.View.extend ({
+var TagView = Backbone.View.extend({
   template: AppTemplates.taglist,
 
   el: '#tags',
@@ -12,21 +12,19 @@ var TagView = Backbone.View.extend ({
     var _this = this;
 
     this.collection.fetch().then(function() {
-
-      //going to try to use this filter later, but moving on to get router working
-
-      var filteredTags = _this.collection.filter(_this.collection.models, function(model) {
-        if (model.attributes.tag) {
-          return {tag: model.attributes.tag};
+      var filteredTags = _this.collection.reduce(function(snowball, model) {
+        if (!_.findWhere(snowball, {name: model.get('tag')})) {
+          snowball.push({name: model.get('tag'), path: model.get('tag')});
         }
-      }
 
-      );
-      var html = _this.template(_this.collection.toJSON());
+        return snowball;
+      }, [{name: 'all', path: ''}]);
+
+      var html = _this.template(filteredTags);
 
       _this.$el.html(html);
     });
 
     return this;
-  }
+  },
 });
