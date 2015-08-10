@@ -9,7 +9,6 @@ var Router = Backbone.Router.extend({
   },
 
   filterLinksByTag: function(tag) {
-    debugger;
     var _this = this;
     this.collection.fetch().then(function() {
       var html = _this.template(_this.collection.filter('models', function() {
