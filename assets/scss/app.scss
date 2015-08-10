@@ -73,18 +73,18 @@ button {
     border: none;
     border-radius: 3px;
     font-weight: bold;
-    background: #003152;
+    background: #005273;
     color: white;
 }
 button:hover {
-    background: darken(#003152, 5%)
+    background: darken(#005273, 5%)
 }
 
 .submit-bookmark {
-    background: #005273;
+    background: #003152;
 }
 
 .submit-bookmark:hover {
-    background: darken(#005273, 10%)
+    background: darken(#003152, 10%)
 }
 
