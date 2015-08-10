@@ -60,7 +60,7 @@ li {
 
 a {
     text-decoration: none;
-    color: #835aa4;
+    color: #005273;
 }
 
 a:hover {
@@ -73,10 +73,18 @@ button {
     border: none;
     border-radius: 3px;
     font-weight: bold;
-    background: #835aa4;
+    background: #003152;
     color: white;
 }
 button:hover {
-    background: darken(#835aa4, 10%)
+    background: darken(#003152, 5%)
+}
+
+.submit-bookmark {
+    background: #005273;
+}
+
+.submit-bookmark:hover {
+    background: darken(#005273, 10%)
 }
 
