@@ -18,6 +18,9 @@ body {
     label, input {
         margin-bottom: 10px;
     }
+    input:last-of-type {
+        margin-bottom: 0;
+    }
     button {
         margin: 10px 0;
     }
@@ -41,6 +44,7 @@ body {
 
     .date {
         font-size: 0.8em;
+        color: gray;
     }
 
 }
@@ -63,5 +67,6 @@ button {
     padding: 10px;
     border: none;
     border-radius: 3px;
+    font-weight: bold;
 }
 
