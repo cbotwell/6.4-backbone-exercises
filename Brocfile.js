@@ -8,14 +8,14 @@ var vendorJs = concat('bower_components', {
     'jquery/dist/jquery.min.js',
     'handlebars/handlebars.runtime.min.js',
     'underscore/underscore-min.js',
-    'backbone/backbone-min.js'
+    'backbone/backbone-min.js',
   ],
-  outputFile: 'vendor.js'
+  outputFile: 'vendor.js',
 });
 
 var assetsWithTemplates = handlebars('assets', {
   srcDir: 'templates',
-  namespace: 'AppTemplates'
+  namespace: 'AppTemplates',
 });
 
 var appJs = concat(assetsWithTemplates, {
@@ -30,16 +30,16 @@ var appJs = concat(assetsWithTemplates, {
     'js/views/tagview.js',
     'js/routers/router.js',
 
-    'js/index.js'
+    'js/index.js',
   ],
-  outputFile: 'app.js'
+  outputFile: 'app.js',
 });
 
 var sassDirs = [
   'assets/scss',
   'bower_components/reset-css',
   'bower_components/bourbon/app/assets/stylesheets',
-  'bower_components/neat/app/assets/stylesheets'
+  'bower_components/neat/app/assets/stylesheets',
 ];
 
 var appCss = sass(sassDirs, 'app.scss', 'app.css');
