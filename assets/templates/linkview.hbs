@@ -2,8 +2,8 @@
     {{#each this as |bookmark|}}
         <li>
             <a href="{{ bookmark.link }}">
-                {{ bookmark.link }}
-                <span>{{ bookmark.createDate }}</span>
+                <p class="link">{{ bookmark.link }}</p>
+                <p class="date">{{ bookmark.createDate }}</p>
             </a>
         </li>
     {{/each}}

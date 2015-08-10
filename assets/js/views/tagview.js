@@ -12,13 +12,18 @@ var TagView = Backbone.View.extend ({
     var _this = this;
 
     this.collection.fetch().then(function() {
-      var html = _this.template(_.filter(_this.collection.models, function(model) {
-        if (!model.attributes.tag) {
+
+      //going to try to use this filter later, but moving on to get router working
+
+      var filteredTags = _this.collection.filter(_this.collection.models, function(model) {
+        if (model.attributes.tag) {
           return {tag: model.attributes.tag};
         }
       }
 
-      ));
+      );
+      var html = _this.template(_this.collection.toJSON());
+
       _this.$el.html(html);
     });
 

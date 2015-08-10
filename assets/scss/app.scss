@@ -4,9 +4,64 @@
 @import 'neat';
 @import 'border-box';
 
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+.wrapper {
+    @include outer-container(980px);
+}
+
+#target {
+    margin-top: 20px;
+
+    label, input {
+        margin-bottom: 10px;
+    }
+    button {
+        margin: 10px 0;
+    }
+}
+
 .new-bookmark {
     display: none;
     label, input {
         @include span-columns(12);
     }
 }
+
+#links {
+    @include span-columns(9);
+    margin-top: 20px;
+
+    .link {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+
+    .date {
+        font-size: 0.8em;
+    }
+
+}
+
+#tags {
+    @include span-columns(3);
+    margin-top: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+}
+
