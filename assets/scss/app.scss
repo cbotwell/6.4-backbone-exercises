@@ -75,5 +75,43 @@ body {
     .post {
         font-size: 1.2em;
         line-height: 1.7em;
+        margin-bottom: 15px;
     }
+    .editbutton {
+        margin-top: 20px;
+    }
+    .edit {
+        input, textarea {
+            @include span-columns(12);
+            margin-bottom: 15px;
+            padding: 10px;
+            font-family: inherit;
+            border: 1px solid gray;
+        }
+        textarea {
+            height: 500px;
+        }
+        button {
+            width: 70px;
+        }
+        .delete {
+            float: right;
+            background: #a42000;
+        }
+        .delete:hover {
+            background: darken(#a42000, 10%);
+        }
+    }
+}
+
+button {
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    background: #0074bf;
+    color: white;
+}
+
+button:hover {
+    background: darken(#0074bf, 10%);
 }
