@@ -8,26 +8,35 @@ var EditView = Backbone.View.extend({
     'click .delete': 'delete',
   },
 
-  render: function(id) {
-    var html = this.template(this.collection.get(id).toJSON());
+  initialize: function() {
+    this.render();
+  },
+
+  render: function() {
+    var data = {};
+    if (this.model) {
+      data = this.model.toJSON();
+    }
+
+    var html = this.template(data);
     this.$el.html(html);
 
     return this;
   },
 
-  save: function(ev, id) {
+  save: function(ev) {
     ev.preventDefault();
-    var title = this.$el.find('.title');
-    var post = this.$el.find('.title');
+    var title = this.$el.find('.title').val();
+    var post = this.$el.find('.post').val();
     var date = new Date();
     var dateString = date.getMonth() + ' ' + date.getDate() + ', ' + date.getFullYear();
-    this.collection.set({title: title, post: post, editDate: dateString,}, {remove: false});
-    router.navigate(id);
+    this.model.save({title: title, post: post, editDate: dateString});
+    // router.navigate('');
   },
 
-  delete: function(ev, id) {
+  delete: function(ev) {
     ev.preventDefault();
-    this.collection.remove(id);
-    router.navigate('#');
+    this.model.destroy();
+    // router.navigate('');
   },
 });

@@ -4,9 +4,18 @@ var BlogView = Backbone.View.extend({
   template: AppTemplates.blog,
 
   initialize: function() {
-    var _this = this;
-    var html = _this.template(_this.collection.first().toJSON());
-    _this.$el.html(html);
+    this.listenTo(this.collection, 'add reset sync change', this.render);
+    this.render();
+  },
+
+  render: function() {
+    var data = {};
+    if (this.model) {
+      data = this.model.toJSON();
+    }
+
+    var html = this.template(data);
+    this.$el.html(html);
 
     return this;
   },

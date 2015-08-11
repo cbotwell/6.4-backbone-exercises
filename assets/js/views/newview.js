@@ -22,7 +22,10 @@ var NewView = Backbone.View.extend({
     ev.preventDefault();
     var title = this.$el.find('.title').val();
     var post = this.$el.find('.post').val();
-    this.collection.create({title: title, post: post, createDate: new Date(),});
+    var date = new Date();
+    var createString = date.getMonth() + ' ' + date.getDate() + ', ' + date.getFullYear();
+
+    this.collection.create({title: title, post: post, createDate: createString,});
   },
 
   newPost: function() {
