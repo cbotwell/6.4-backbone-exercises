@@ -3,6 +3,7 @@ var Blog = Backbone.Model.extend({
   defaults: {
     title: '',
     post: '',
-    createDate: null
-  }
+    createDate: null,
+    editDate: null,
+  },
 });

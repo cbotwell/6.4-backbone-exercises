@@ -4,6 +4,7 @@ var SidebarView = Backbone.View.extend({
   template: AppTemplates.sidebar,
 
   initialize: function() {
+    this.listenTo(this.collection, 'add reset sync change', this.render);
     this.render();
   },
 
@@ -16,5 +17,5 @@ var SidebarView = Backbone.View.extend({
     console.info('render');
 
     return this;
-  }
+  },
 });

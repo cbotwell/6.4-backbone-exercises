@@ -1,4 +1,4 @@
-var BlogView = Backbone.View.extend ({
+var BlogView = Backbone.View.extend({
   el: '#target',
 
   template: AppTemplates.blog,
@@ -9,5 +9,5 @@ var BlogView = Backbone.View.extend ({
     _this.$el.html(html);
 
     return this;
-  }
+  },
 });
