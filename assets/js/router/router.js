@@ -7,7 +7,7 @@ var AppRouter = Backbone.Router.extend({
   },
 
   routes: {
-    '#': 'index',
+    '(#)': 'index',
     ':id': 'post',
     ':id/edit': 'edit',
   },
