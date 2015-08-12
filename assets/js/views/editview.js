@@ -32,13 +32,15 @@ var EditView = Backbone.View.extend({
     var post = this.$el.find('.post').val();
     var date = new Date();
     var dateString = date.getMonth() + ' ' + date.getDate() + ', ' + date.getFullYear();
-    this.model.save({title: title, post: post, editDate: dateString});
-    router.navigate('');
+    this.model.save({title: title, post: post, editDate: dateString}).then(function() {
+      router.navigate('', {trigger: true});
+    });
   },
 
   delete: function(ev) {
     ev.preventDefault();
-    this.model.destroy();
-    router.navigate('');
+    this.model.destroy().then(function() {
+      router.navigate('', {trigger: true});
+    });
   },
 });

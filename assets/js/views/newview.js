@@ -29,6 +29,8 @@ var NewView = Backbone.View.extend({
     var createString = date.getMonth() + ' ' + date.getDate() + ', ' + date.getFullYear();
 
     this.collection.create({title: title, post: post, createDate: createString,});
+
+    // add a router navigate to the new post
   },
 
   newPost: function() {
