@@ -8,7 +8,7 @@ var AppRouter = Backbone.Router.extend({
 
   routes: {
     '(#)': 'index',
-    ':id': 'post',
+    ':id': 'readPost',
     ':id/edit': 'edit',
   },
 
@@ -20,7 +20,7 @@ var AppRouter = Backbone.Router.extend({
     });
   },
 
-  post: function(id) {
+  readPost: function(id) {
     var _this = this;
 
     this.collection.fetch().then(function() {

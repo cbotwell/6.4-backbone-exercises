@@ -17,6 +17,8 @@ var BlogView = Backbone.View.extend({
     var html = this.template(data);
     this.$el.html(html);
 
+    console.info('render');
+
     return this;
   },
 });
