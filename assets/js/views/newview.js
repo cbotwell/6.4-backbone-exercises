@@ -3,7 +3,6 @@ var NewView = Backbone.View.extend({
 
   events: {
     'click .save': 'save',
-    'click .newbutton': 'newPost',
   },
 
   initialize: function() {
@@ -31,10 +30,4 @@ var NewView = Backbone.View.extend({
     // add a router navigate to the new post
   },
 
-  newPost: function() {
-    this.$el.find('.new').slideDown();
-
-    // dosen't work with .then() and looks buggy try something different later
-    // this.$('input.title').focus();
-  },
 });

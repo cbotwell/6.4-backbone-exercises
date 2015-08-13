@@ -14,12 +14,7 @@ body {
     margin-top: 30px;
 }
 
-#newpost {
-    font-family: Helvetica, sans-serif;
-    margin-bottom: 20px;
-    .new {
-        display: none;
-    }
+.new {
     label, input, textarea {
         @include span-columns(12);
         margin-bottom: 15px;
@@ -36,11 +31,6 @@ body {
     }
     input {
         font-weight: bold;
-    }
-    .newbutton {
-        position: absolute;
-        top: 10px;
-        left: 10px;
     }
 }
 
@@ -86,6 +76,18 @@ body {
     .date {
         font-size: 0.8em;
         color: gray;
+    }
+    .newbutton {
+        button {
+            background: lighten(#525252, 10%);
+        }
+        button:hover {
+            background: #525252;
+        }
+
+    }
+    .newbutton:hover {
+        background: white;
     }
 }
 #target {
