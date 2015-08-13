@@ -2,7 +2,7 @@ var NewView = Backbone.View.extend({
   template: AppTemplates.newpost,
 
   events: {
-    'click .save': 'save',
+    'submit form': 'save',
   },
 
   initialize: function() {
@@ -25,9 +25,10 @@ var NewView = Backbone.View.extend({
     var date = new Date();
     var createString = date.getMonth() + ' ' + date.getDate() + ', ' + date.getFullYear();
 
-    this.collection.create({title: title, post: post, createDate: createString,});
-
-    // add a router navigate to the new post
+    var model = this.collection.add({title: title, post: post, createDate: createString,});
+    model.save().then(function() {
+      window.location = '#' + model.id;
+    });
   },
 
 });

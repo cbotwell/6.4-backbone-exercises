@@ -46,6 +46,7 @@ var AppRouter = Backbone.Router.extend({
     var showEdit = function() {
       var model = _this.collection.get(id);
       var edit = new EditView({model: model});
+      $('#target').html(edit.render().el);
     };
 
     showEdit();

@@ -1,6 +1,4 @@
 var EditView = Backbone.View.extend({
-  el: '#target',
-
   template: AppTemplates.edit,
 
   events: {
