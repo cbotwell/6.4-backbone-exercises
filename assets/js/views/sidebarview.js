@@ -1,5 +1,4 @@
 var SidebarView = Backbone.View.extend({
-  el: '#sidebar',
 
   template: AppTemplates.sidebar,
 

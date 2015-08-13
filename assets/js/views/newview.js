@@ -1,6 +1,4 @@
 var NewView = Backbone.View.extend({
-  el: '#newpost',
-
   template: AppTemplates.newpost,
 
   events: {
@@ -35,5 +33,8 @@ var NewView = Backbone.View.extend({
 
   newPost: function() {
     this.$el.find('.new').slideDown();
+
+    // dosen't work with .then() and looks buggy try something different later
+    // this.$('input.title').focus();
   },
 });

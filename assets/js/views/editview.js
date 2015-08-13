@@ -33,7 +33,7 @@ var EditView = Backbone.View.extend({
     var date = new Date();
     var dateString = date.getMonth() + ' ' + date.getDate() + ', ' + date.getFullYear();
     this.model.save({title: title, post: post, editDate: dateString}).then(function() {
-      router.navigate('', {trigger: true});
+      router.navigate('this.model.id', {trigger: true});
     });
   },
 

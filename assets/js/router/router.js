@@ -2,8 +2,10 @@ var AppRouter = Backbone.Router.extend({
   initialize: function() {
     this.collection = new BlogPosts();
     this.collection.fetch();
-    allPosts = new SidebarView({collection: this.collection});
-    newview = new NewView({collection: this.collection});
+    this.sidebar = new SidebarView({collection: this.collection});
+    this.new = new NewView({collection: this.collection});
+    $('#sidebar').html(this.sidebar.render().el);
+    $('#newpost').html(this.new.render().el);
   },
 
   routes: {
@@ -17,6 +19,7 @@ var AppRouter = Backbone.Router.extend({
 
     this.collection.fetch().then(function() {
       var currentPost = new BlogView({model: _this.collection.first()});
+      _this.$('#target').html(currentPost.render().el);
     });
   },
 
@@ -25,6 +28,7 @@ var AppRouter = Backbone.Router.extend({
 
     this.collection.fetch().then(function() {
       var currentPost = new BlogView({model: _this.collection.get(id)});
+      _this.$('#target').html(currentPost.render().el);
     });
   },
 
