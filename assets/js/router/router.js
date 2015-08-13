@@ -15,21 +15,13 @@ var AppRouter = Backbone.Router.extend({
   },
 
   index: function() {
-    var _this = this;
-
-    this.collection.fetch().then(function() {
-      var currentPost = new BlogView({model: _this.collection.first()});
-      $('#target').html(currentPost.render().el);
-    });
+    this.currentPost = new BlogView({model: this.collection.first()});
+    $('#target').html(this.currentPost.render().el);
   },
 
   readPost: function(id) {
-    var _this = this;
-
-    this.collection.fetch().then(function() {
-      var currentPost = new BlogView({model: _this.collection.get(id)});
-      $('#target').html(currentPost.render().el);
-    });
+    this.currentPost = new BlogView({model: this.collection.get(id)});
+    $('#target').html(this.currentPost.render().el);
   },
 
   edit: function(id) {

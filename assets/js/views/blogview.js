@@ -3,7 +3,7 @@ var BlogView = Backbone.View.extend({
   template: AppTemplates.blog,
 
   initialize: function() {
-    this.listenTo(this.collection, 'add reset sync change', this.render);
+    this.listenTo(this.collection, 'add sync change', this.render);
     this.render();
   },
 
