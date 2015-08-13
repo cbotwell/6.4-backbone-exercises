@@ -19,7 +19,7 @@ var AppRouter = Backbone.Router.extend({
 
     this.collection.fetch().then(function() {
       var currentPost = new BlogView({model: _this.collection.first()});
-      _this.$('#target').html(currentPost.render().el);
+      $('#target').html(currentPost.render().el);
     });
   },
 
@@ -28,7 +28,7 @@ var AppRouter = Backbone.Router.extend({
 
     this.collection.fetch().then(function() {
       var currentPost = new BlogView({model: _this.collection.get(id)});
-      _this.$('#target').html(currentPost.render().el);
+      $('#target').html(currentPost.render().el);
     });
   },
 

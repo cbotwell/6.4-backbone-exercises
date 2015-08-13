@@ -1,5 +1,4 @@
 var BlogView = Backbone.View.extend({
-  el: '#target',
 
   template: AppTemplates.blog,
 
