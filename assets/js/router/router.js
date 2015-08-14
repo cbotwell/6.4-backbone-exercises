@@ -3,7 +3,7 @@ var AppRouter = Backbone.Router.extend({
     this.collection = new BlogPosts();
     this.collection.fetch();
     this.sidebar = new SidebarView({collection: this.collection});
-    this.newPost = new NewView({collection: this.collection});
+    // this.newPost = new NewView({collection: this.collection});
     $('#sidebar').html(this.sidebar.render().el);
   },
 
@@ -19,8 +19,8 @@ var AppRouter = Backbone.Router.extend({
 
     var attachDetail = function() {
       var model = _this.collection.first();
-      _this.currentPost = new BlogView({model: model});
-      $('#target').html(_this.currentPost.render().el);
+      _this.indexPost = new BlogView({model: model});
+      $('#target').html(_this.indexPost.render().el);
     };
 
     attachDetail();
@@ -45,8 +45,8 @@ var AppRouter = Backbone.Router.extend({
 
     var showEdit = function() {
       var model = _this.collection.get(id);
-      var edit = new EditView({model: model});
-      $('#target').html(edit.render().el);
+      this.editView = new EditView({model: model});
+      $('#target').html(this.editView.render().el);
     };
 
     showEdit();
@@ -54,8 +54,8 @@ var AppRouter = Backbone.Router.extend({
   },
 
   newBlog: function() {
-    var nPost = new NewView();
-    $('#target').html(this.newPost.render().el);
+    this.newPostView = new NewView();
+    $('#target').html(this.newPostView.render().el);
   },
 
 });
