@@ -3,7 +3,6 @@ var AppRouter = Backbone.Router.extend({
     this.collection = new BlogPosts();
     this.collection.fetch();
     this.sidebar = new SidebarView({collection: this.collection});
-    // this.newPost = new NewView({collection: this.collection});
     $('#sidebar').html(this.sidebar.render().el);
   },
 
@@ -29,6 +28,21 @@ var AppRouter = Backbone.Router.extend({
 
   readPost: function(id) {
     var _this = this;
+    if (this.indexPost) {
+      this.indexPost.remove();
+    }
+
+    if (this.currentPost) {
+      this.currentPost.remove();
+    }
+
+    if (this.editView) {
+      this.editView.remove();
+    }
+
+    if (this.newPostView) {
+      this.newPostView.remove();
+    }
 
     var attachDetail = function() {
       var model = _this.collection.get(id);
@@ -42,6 +56,17 @@ var AppRouter = Backbone.Router.extend({
 
   edit: function(id) {
     var _this = this;
+    if (this.indexPost) {
+      this.indexPost.remove();
+    }
+
+    if (this.currentPost) {
+      this.currentPost.remove();
+    }
+
+    if (this.newPostView) {
+      this.newPostView.remove();
+    }
 
     var showEdit = function() {
       var model = _this.collection.get(id);
@@ -54,7 +79,23 @@ var AppRouter = Backbone.Router.extend({
   },
 
   newBlog: function() {
-    this.newPostView = new NewView();
+    if (this.indexPost) {
+      this.indexPost.remove();
+    }
+
+    if (this.editView) {
+      this.editView.remove();
+    }
+
+    if (this.newPostView) {
+      this.newPostView.remove();
+    }
+
+    if (this.currentPost) {
+      this.currentPost.remove();
+    }
+
+    this.newPostView = new NewView({collection: this.collection});
     $('#target').html(this.newPostView.render().el);
   },
 
