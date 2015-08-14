@@ -1,0 +1,191 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+/* Liberally stolen from Paul Irish */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  font-family: Georgia, serif;
+  margin: 0 20px; }
+
+.wrapper {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px; }
+  .wrapper::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.new label, .new input, .new textarea {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-bottom: 15px;
+  font-family: inherit; }
+  .new label:last-child, .new input:last-child, .new textarea:last-child {
+    margin-right: 0; }
+
+.new button {
+  margin-bottom: 15px; }
+
+.new textarea {
+  height: 100px; }
+
+.new input, .new textarea {
+  padding: 5px; }
+
+.new input {
+  font-weight: bold; }
+
+#sidebar {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  padding: 0 10px; }
+  #sidebar:last-child {
+    margin-right: 0; }
+  #sidebar li {
+    padding: 20px;
+    border-bottom: 1px solid gray; }
+    #sidebar li a {
+      text-decoration: none;
+      color: inherit; }
+  #sidebar li:first-of-type {
+    margin-top: 0; }
+  #sidebar li:last-of-type {
+    border-bottom: none; }
+  #sidebar li:hover {
+    background: #e6e6e6; }
+    #sidebar li:hover .title {
+      color: #0074bf; }
+  #sidebar .title {
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 5px; }
+  #sidebar .post {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.9em;
+    margin-bottom: 10px; }
+  #sidebar .date {
+    font-size: 0.8em;
+    color: gray; }
+  #sidebar .newbutton button {
+    background: #6c6c6c; }
+  #sidebar .newbutton button:hover {
+    background: #525252; }
+  #sidebar .newbutton:hover {
+    background: white; }
+
+#target {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%; }
+  #target:last-child {
+    margin-right: 0; }
+  #target .title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  #target .date {
+    font-size: 0.9em;
+    color: gray;
+    margin-bottom: 15px; }
+  #target .post {
+    font-size: 1.2em;
+    line-height: 1.7em;
+    margin-bottom: 15px; }
+  #target .editbutton {
+    margin-top: 20px; }
+  #target .edit input, #target .edit textarea, #target .new input, #target .new textarea {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-family: inherit;
+    border: 1px solid gray; }
+    #target .edit input:last-child, #target .edit textarea:last-child, #target .new input:last-child, #target .new textarea:last-child {
+      margin-right: 0; }
+  #target .edit textarea, #target .new textarea {
+    height: 500px; }
+  #target .edit .delete, #target .new .delete {
+    float: right;
+    background: #a42000; }
+  #target .edit .delete:hover, #target .new .delete:hover {
+    background: #711600; }
+
+button {
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  background: #0074bf;
+  color: white;
+  width: 80px; }
+
+button:hover {
+  background: #00558c; }
